@@ -128,7 +128,10 @@ button:focus-visible {
   letter-spacing: 0.14em;
   font-variant: small-caps;
   color: var(--fog);
-  mix-blend-mode: difference;
+  background: rgba(5, 4, 5, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 
 .chrome a { transition: color 0.3s ease; }
@@ -549,16 +552,6 @@ button:focus-visible {
   font-size: 0.95rem;
 }
 
-.wish-note {
-  min-height: 1.4rem;
-  margin-top: 0.9rem;
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--rose-bright);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
 .wish-note.show { opacity: 1; transform: translateY(0); }
 
 .candle-wrap {
@@ -629,17 +622,12 @@ button:focus-visible {
   align-items: center;
 }
 
-.rsvp-status {
-  font-size: 0.85rem;
-  color: var(--rose-bright);
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 1.1rem;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.rsvp-note {
+  max-width: 34ch;
+  color: var(--fog);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
-.rsvp-status.show { opacity: 1; transform: translateY(0); }
 
 /* footer */
 
@@ -677,36 +665,37 @@ button:focus-visible {
     font-size: 0.66rem;
   }
 
-  /* ---- hero: full-bleed photo, text pinned to the bottom ---- */
+  /* ---- hero: photo up top, content flows normally below it ---- */
   .hero {
     display: block;
     position: relative;
-    min-height: 100svh;
+    min-height: 0;
   }
 
   .hero-image {
-    position: absolute;
-    inset: 0;
-    min-height: 100svh;
+    position: relative;
+    min-height: 62vh;
     background-position: center 32%;
     background-image:
-      linear-gradient(180deg, rgba(5,4,5,0.25) 0%, rgba(5,4,5,0.35) 40%, var(--ink) 92%),
+      linear-gradient(180deg, rgba(5,4,5,0.1) 0%, rgba(5,4,5,0.4) 68%, var(--ink) 100%),
       url("assets/lily.png");
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    min-height: 100svh;
+    min-height: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     gap: 1.1rem;
-    padding: 1.75rem 1.25rem 2.25rem;
+    padding: 2rem 1.25rem 2.25rem;
     padding-bottom: max(2.25rem, calc(env(safe-area-inset-bottom) + 1.5rem));
   }
 
-  .hero-content::before { display: none; }
+  .hero-content::before {
+    left: 1.25rem;
+    right: 1.25rem;
+  }
 
   .hero-name { font-size: 16vw; }
   .hero-name .num { font-size: 0.3em; letter-spacing: 0.22em; }
@@ -760,8 +749,6 @@ button:focus-visible {
   .candle-btn { padding: 1rem; }
 
   .rsvp-row { flex-direction: column; align-items: stretch; gap: 0.9rem; }
-  .rsvp-row .btn { width: 100%; justify-content: center; padding: 1rem 1.4rem; }
-  .rsvp-status { text-align: center; }
 
   .foot { padding: 2.2rem 1.25rem calc(2.2rem + env(safe-area-inset-bottom)); }
 }
