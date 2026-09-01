@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dossier — Yantong's 18th</title>
+<meta name="description" content="Everything you need for Yantong's 18th birthday — date, time, location and dress code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="petal-field" aria-hidden="true"></div>
+<div id="burst-field" aria-hidden="true"></div>
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<header class="chrome">
+  <a href="index.html">← Main page</a>
+  <span>details</span>
+</header>
+
+<main class="party">
+
+  <div class="party-head">
+    <div>
+      <h1 class="party-title">Details</h1>
+    </div>
+    <div class="portrait-frame">
+      <img src="assets/portrait.png" alt="Yantong holding a bouquet of lilies, dressed in a floral kimono at night" loading="lazy">
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="file">
+      <span class="file-label">Date</span>
+      <span class="file-value">Friday, 25 September</span>
+    </div>
+
+    <div class="file">
+      <span class="file-label">Time</span>
+      <span class="file-value">6:00 PM</span>
+    </div>
+
+    <div class="file location" id="locationCard" role="button" tabindex="0" aria-pressed="false" aria-label="Flip for directions">
+      <div class="flip-inner">
+        <div class="flip-face front">
+          <span class="file-label">Location</span>
+          <span class="file-value">Tierra Vue, Function Room</span>
+          <span class="file-note">38 St Patrick's Rd</span>
+          <span class="flip-hint">tap for directions →</span>
+        </div>
+        <div class="flip-face back">
+          <span class="file-label">Get there</span>
+          <a class="map-link" id="mapLink" href="https://www.google.com/maps/search/?api=1&query=38+St+Patrick%27s+Rd+Tierra+Vue" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+          <span class="flip-hint">tap to flip back</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="file">
+      <span class="file-label">Dress code</span>
+      <span class="file-value">Something Yantong would wear</span>
+    </div>
+  </div>
+
+  <section class="wish">
+    <div class="wish-text">
+      <h2>Light one for her.</h2>
+      <p>Eighteen candles is a lot to draw, so here's one that counts for all of them. Go on.</p>
+      <p class="wish-note" id="wishNote">made a wish. she doesn't know it yet.</p>
+    </div>
+
+    <div class="candle-wrap">
+      <button class="candle-btn" id="candleBtn" aria-label="Blow out the candle to make a wish">
+        <svg viewBox="0 0 74 132" xmlns="http://www.w3.org/2000/svg">
+          <g class="flame">
+            <ellipse cx="37" cy="20" rx="10" ry="17" fill="#e2a9bb" opacity="0.55"/>
+            <ellipse cx="37" cy="22" rx="6" ry="12" fill="#f2e9e0"/>
+          </g>
+          <g class="smoke">
+            <path d="M37 18 C 30 6, 44 -4, 37 -14" stroke="#a9949c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </g>
+          <rect x="26" y="36" width="22" height="90" rx="3" fill="#f2e9e0"/>
+          <rect x="26" y="36" width="22" height="90" rx="3" fill="url(#candleStripes)" opacity="0.5"/>
+          <defs>
+            <pattern id="candleStripes" width="22" height="12" patternUnits="userSpaceOnUse">
+              <rect width="22" height="6" fill="#c98198"/>
+            </pattern>
+          </defs>
+          <rect x="34" y="30" width="6" height="8" fill="#3d1522"/>
+        </svg>
+      </button>
+      <p class="candle-caption" id="candleCaption">click to blow it out</p>
+    </div>
+  </section>
+
+  <div class="rsvp">
+    <span class="file-label">Will you be there?</span>
+    <div class="rsvp-row">
+      <button class="btn" id="rsvpYes">I'll be there</button>
+      <span class="rsvp-status" id="rsvpStatus">seen — can't wait to see you there.</span>
+    </div>
+  </div>
+
+</main>
+
+<footer class="foot">for yantong — eighteen, 25 september</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
