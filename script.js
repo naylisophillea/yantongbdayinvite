@@ -158,23 +158,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------ */
-  /* RSVP — a small confetti of petals + status line                     */
-  /* ------------------------------------------------------------------ */
-  function initRSVP() {
-    var btn = document.getElementById("rsvpYes");
-    var status = document.getElementById("rsvpStatus");
-    if (!btn) return;
-
-    btn.addEventListener("click", function () {
-      status.classList.add("show");
-      btn.textContent = "You're on the list";
-      btn.disabled = true;
-      btn.style.opacity = "0.6";
-      btn.style.cursor = "default";
-      burst(btn.getBoundingClientRect());
-    });
-  }
 
   /* ------------------------------------------------------------------ */
   /* Shared burst effect — a handful of petals thrown from a point       */
@@ -221,6 +204,5 @@
     initCountdown();
     initLocationFlip();
     initCandle();
-    initRSVP();
   });
 })();
